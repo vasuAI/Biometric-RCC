@@ -10,12 +10,12 @@ import {
 } from 'react-native';
 
 interface Props {
-  image: ImageSourcePropType;
   title: string;
   imageStyle: object;
   onVerify: Function;
-  cancelButtonText: string;
   getErrorStatus: any;
+  cancelButtonText: string;
+  image: ImageSourcePropType;
   allowDeviceCredentials: boolean;
 }
 
@@ -25,11 +25,11 @@ const Biometric = (props: Props) => {
     uri: 'https://cdn-icons-png.flaticon.com/512/25/25936.png',
   };
   const {
-    title = 'Sign in',
     onVerify,
     imageStyle,
-    cancelButtonText = 'close',
+    title = 'Sign in',
     image = initialImageLink,
+    cancelButtonText = 'close',
     allowDeviceCredentials = false,
   } = props;
 
@@ -44,7 +44,7 @@ const Biometric = (props: Props) => {
    * @description Handling error
    * @param code
    */
-  const handleError = (code: any) => {
+  const handleError = (code: string) => {
     switch (code) {
       case 'Too many attempts. Try again later.':
         Alert.alert('Too many attempts. Try again later');
@@ -89,14 +89,13 @@ const Biometric = (props: Props) => {
    */
   const isSensorAvailable = async () => {
     try {
-      const {biometryType, available, error} =
-        await rnBiometrics.isSensorAvailable();
+      const {available} = await rnBiometrics.isSensorAvailable();
       if (available) {
         isBiometricSupport();
       }
     } catch (err) {
       onVerify({error: err});
-      console.log(err);
+      console.log('asas', err);
     }
   };
 

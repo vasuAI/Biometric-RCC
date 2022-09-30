@@ -9,14 +9,17 @@ export default App = () => {
     <View style={{alignItems: 'center', marginTop: 200}}>
       <Biometric
         image={require('./fingerPrint.png')}
-        title="Sign in with Touch ID"
+        title="Sign in"
         cancelButtonText="Close"
         onVerify={res => {
           setSuccess(res.verified);
         }}
         imageStyle={{height: 120}}
-        allowDeviceCredentials={false}
+        allowDeviceCredentials={true}
       />
+
+
+
       {success ? (
         <View>
           <Text>Login Successfull</Text>
