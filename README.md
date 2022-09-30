@@ -2,6 +2,17 @@
 
 ## Getting started
 
+[![react-native version](https://img.shields.io/badge/react--native-0.60-green.svg?style=flat-square)](https://github.com/facebook/react-native/releases)
+
+This Biometric authentication component use [React Native Biometrics](https://www.npmjs.com/package/react-native-biometrics/v/3.0.1) library for authenticating users with biometric authentication methods like Face ID and Touch ID on both iOS and Android.
+
+## React Native Compatibility
+
+| `react-native-biometrics` version | Required React Native Version |
+| :-------------------------------: | :---------------------------: |
+|            `>= 3.0.0`             |           `>= 0.60`           |
+|            `<= 1.7.0`             |          `<= 0.59.x`          |
+
 ### Install
 
 ```shell
