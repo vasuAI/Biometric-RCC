@@ -45,7 +45,28 @@ In your `Info.plist`:
 <key>NSFaceIDUsageDescription</key>
 <string>Enabling Face ID allows you quick and secure access to your account.</string>
 ```
+## Example
 
+
+Now inside your component file
+```tsx
+// Component.jsx
+
+import Biometric from './Biometric';
+...
+return (
+     <Biometric
+        image={}
+        title="Sign in with Touch ID"
+        cancelButtonText="Close"
+        onVerify={(res: any) => {
+          successCallback(res);
+        }}
+        allowDeviceCredentials={true}
+        imageStyle={{height: 120}}
+      /> 
+)
+```
 ## Props
 
 | Prop                   |  Default  |         Type          | Description                |
